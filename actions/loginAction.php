@@ -11,7 +11,7 @@ if(isset($_POST['signup'])){
         // Données de l'user
         $user_pseudo = htmlspecialchars($_POST['userLogin']);
         $user_password = htmlspecialchars($_POST['userPassword']);
-
+        
         $checkIfUserExists = $bdd->prepare('SELECT * FROM recruiter WHERE login = ?');
         $checkIfUserExists->execute(array($user_pseudo));
 
@@ -36,7 +36,34 @@ if(isset($_POST['signup'])){
             }
 
         } else {
-            $errorMsg = "Le nom d'utilisateur saisit est incorrect";
+            $checkIfUserExists = $bdd->prepare('SELECT * FROM candidate WHERE login = ?');
+            $checkIfUserExists->execute(array($user_pseudo));
+
+            // Vérification si login user existe
+            if($checkIfUserExists->rowCount() > 0){
+
+                // Vérification si mdp est correct
+                $userInfos = $checkIfUserExists->fetch();
+                if(password_verify($user_password, $userInfos['password'])){
+
+                    // Authentifier l'user et démarrer sa session
+                    $_SESSION['auth'] = true;
+                    $_SESSION['id'] = $userInfos['id'];
+                    $_SESSION['login'] = $userInfos['login'];
+                    $_SESSION['email'] = $userInfos['email'];
+
+                    // Redirection vers la page d'accueil après démarrage session
+                    header('Location: index.php');
+
+                } else {
+                    $errorMsg = "Le mot de passe saisit est incorrect";
+                }
+
+            } else {
+                $errorMsg = "L'utilisateur n'existe pas";
+            }
+
+
         }   
 
     } else {

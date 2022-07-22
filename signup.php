@@ -15,6 +15,13 @@
             <label for="userEmail" class="form-label">Adresse Email</label>
             <input type="email" class="form-control" name="userEmail">
         </div>
+        <label for="userType" class="form-label">Quel type d'utilisateur êtes-vous ?</label>
+        <select class="form-select" name="userType">
+            <option selected>Selectionner...</option>
+            <option value="candidate">Un candidat</option>
+            <option value="recruiter">Un recruteur</option>
+        </select>
+        <br>
         <div class="mb-3">
             <label for="userPassword" class="form-label">Mot de passe</label>
             <input type="password" class="form-control" name="userPassword">
