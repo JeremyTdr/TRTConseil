@@ -1,7 +1,7 @@
 <?php 
     require('actions/securityAction.php');
-    require('actions/getInfosOfferAction.php');
-    require('actions/editOfferAction.php');
+    require('actions/offers/getInfosOfferAction.php');
+    require('actions/offers/editOfferAction.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">

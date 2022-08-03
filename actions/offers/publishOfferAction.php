@@ -15,7 +15,7 @@ if(isset($_POST["publish"])){
         $authorLogin_offer = $_SESSION['login'];
 
 
-        $publishOffer = $bdd->prepare('INSERT INTO offers(title, description, location, salary, id_author, login_author)VALUES(?, ?, ?, ?, ?, ?)');
+        $publishOffer = $bdd->prepare('INSERT INTO offers (title, description, location, salary, id_author, login_author) VALUES (?, ?, ?, ?, ?, ?)');
         
         $publishOffer->execute(
             array(

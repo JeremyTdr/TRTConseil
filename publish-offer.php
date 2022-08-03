@@ -1,6 +1,6 @@
 <?php 
     require('actions/securityAction.php'); 
-    require('actions/publishOfferAction.php');
+    require('actions/offers/publishOfferAction.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">

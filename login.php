@@ -1,4 +1,6 @@
-<?php require('actions/loginAction.php');?>
+<?php 
+require('actions/users/loginAction.php');
+?>
 <!DOCTYPE html>
     <html lang="fr">
     <?php include 'includes/head.php'; ?>
@@ -14,7 +16,9 @@
                 <label for="userPassword" class="form-label">Mot de passe</label>
                 <input type="password" class="form-control" name="userPassword">
             </div>
-            <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; } ?>
+            <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; } 
+                  elseif(isset($successMsg)){ echo '<p>'.$successMsg.'</p>'; } 
+            ?>
             <button type="submit" class="btn btn-primary" name="signup">Se connecter</button>
             <br><br>
             <a href="signup.php">Je n'ai pas de compte, je m'inscris</a>

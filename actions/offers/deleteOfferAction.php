@@ -3,10 +3,10 @@
 session_start();
 
 if(!isset($_SESSION['auth'])) {
-    header('Location: ../login.php');
+    header('Location: ../../login.php');
 }
 
-require('database.php');
+require('../database.php');
 
 if(isset($_GET['id']) AND !empty($_GET['id'])){
 
@@ -23,7 +23,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
             $deleteThisOffer = $bdd->prepare('DELETE FROM offers WHERE id = ?');
             $deleteThisOffer->execute(array($offerId));
 
-            header('Location: ../my-offers.php');
+            header('Location: ../../my-offers.php');
 
         } else {
             echo "Vous n'avez pas le droit d'accèder à cette ressource";

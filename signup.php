@@ -1,4 +1,4 @@
-<?php require('actions/signupAction.php'); ?>
+<?php require('actions/users/signupAction.php'); ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -28,6 +28,7 @@
         </div>
         <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; } ?>
         <button type="submit" class="btn btn-primary" name="signup">S'inscrire</button>
+        <?php if(isset($successMsg)){ echo '<p>'.$successMsg.' <a href="login.php">Retour à la plage de connexion</a></p>'; } ?>
         <br><br>
         <a href="login.php">J'ai déjà un compte, je me connecte</a>
     </form>

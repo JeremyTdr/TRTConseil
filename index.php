@@ -1,6 +1,6 @@
 <?php 
     require('actions/securityAction.php');
-    require('actions/showOffersAction.php');
+    require('actions/offers/showOffersAction.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,9 +9,6 @@
     <?php include 'includes/navbar.php'; ?>
 
     <div class="container">
-        <h1>TRT Conseil</h1>
-        <a href="signup.php">Sign Up</a>
-        <a href="login.php">Login</a>
         <br><br>
         <form method="GET">
             <div class="form-group row">
@@ -28,6 +25,7 @@
 
         <?php
             while($offer = $getAllOffers->fetch()){
+                if($offer['approved'] == 1){
                 ?>
                 <div class="card">
                     <div class="card-header">
@@ -41,8 +39,9 @@
                         <a href="offer.php?id=<?= $offer['id']; ?>" class="btn btn-primary">Voir l'offre</a>
                     </div>
                 </div>
-                <br>
+                <br><br>
                 <?php
+                }
             }
         ?>
 

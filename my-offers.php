@@ -1,6 +1,6 @@
 <?php 
     require('actions/securityAction.php');
-    require('actions/myOffersAction.php');
+    require('actions/offers/myOffersAction.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -11,7 +11,11 @@
     <div class="container">
         <br><br>
         <?php
+        
+        if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; }
+
             while($offer = $getAllMyOffers->fetch()){
+
                 ?>
                     <div class="card">
                         <div class="card-header">
@@ -23,9 +27,24 @@
                         <div class="card-footer">
                             <p><?= $offer['location']; ?> - <?= $offer['salary']; ?></p>
 
-                            <a href="offer.php?id=<?= $offer['id']; ?>" class="btn btn-primary">Voir l'offre</a>
-                            <a href="edit-offer.php?id=<?= $offer['id']; ?>" class="btn btn-warning">Modifier l'offre</a>
-                            <a href="./actions/deleteOfferAction.php?id=<?= $offer['id']; ?>" class="btn btn-danger">Supprimer l'offre</a>
+                            <?php
+                            switch($_SESSION['type']){
+
+                                case 'candidate':
+                                    ?>
+                                    <a href="offer.php?id=<?= $offer['id']; ?>" class="btn btn-primary">Voir l'offre</a>
+                                    <?php
+                                    break;
+                                
+                                case 'recruiter':
+                                    ?>
+                                    <a href="offer.php?id=<?= $offer['id']; ?>" class="btn btn-primary">Voir l'offre</a>
+                                    <a href="edit-offer.php?id=<?= $offer['id']; ?>" class="btn btn-warning">Modifier l'offre</a>
+                                    <a href="./actions/offers/deleteOfferAction.php?id=<?= $offer['id']; ?>" class="btn btn-danger">Supprimer l'offre</a>
+                                    <?php
+                                    break;
+                            } 
+                            ?>            
                         </div>     
                     </div>
                     <br>
