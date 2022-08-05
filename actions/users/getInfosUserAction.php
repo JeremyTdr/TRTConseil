@@ -24,7 +24,12 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                     $user_email = $userInfos['email'];
                     $user_cv = $userInfos['cv'];
 
-
+                    if(isset($userInfos['cv'])){
+                        $user_cv = "<iframe src='./assets/files/candidatesCv/".$userInfos['cv']."' height='450' width='350'></iframe>"; 
+                    } else {
+                        $user_cv = "Aucun CV ajouté";
+                    }
+                   
                 }
 
             } else {
@@ -48,6 +53,42 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                     $user_email = $userInfos['email'];
 
                     $user_address = str_replace('<br />', '', $user_address);
+                }
+
+            } else {
+                $errorMsg = "Aucun utilisateur n'a été trouvée";
+            }
+        break;
+
+        case 'admin':
+            $checkIfUserExists = $bdd->prepare('SELECT * FROM admin WHERE id = ?');
+            $checkIfUserExists->execute(array($userId));
+
+            if($checkIfUserExists->rowCount() > 0){
+
+                $userInfos = $checkIfUserExists->fetch();
+
+                if($userInfos['id'] == $_SESSION['id']){
+
+                    $user_login = $userInfos['login'];
+                }
+
+            } else {
+                $errorMsg = "Aucun utilisateur n'a été trouvée";
+            }
+        break;
+
+        case 'consultant':
+            $checkIfUserExists = $bdd->prepare('SELECT * FROM consultant WHERE id = ?');
+            $checkIfUserExists->execute(array($userId));
+
+            if($checkIfUserExists->rowCount() > 0){
+
+                $userInfos = $checkIfUserExists->fetch();
+
+                if($userInfos['id'] == $_SESSION['id']){
+
+                    $user_login = $userInfos['login'];
                 }
 
             } else {

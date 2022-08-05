@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="index.php">Accueil</a>
+          <a class="nav-link text-white" href="index.php">Accueil</a>
         </li>
         <li class="nav-item">
 
@@ -26,29 +26,29 @@
 
             case 'recruiter':
               ?>
-              <li><a class="nav-link" href="publish-offer.php">Publier une offre</a></li>
-              <li><a class="nav-link" href="my-offers.php">Mes offres</a></li>
+              <li><a class="nav-link text-white" href="publish-offer.php">Publier une offre</a></li>
+              <li><a class="nav-link text-white" href="my-offers.php">Mes offres</a></li>
               <?php
               break;
 
             case 'candidate':
               ?>
-              <li><a class="nav-link" href="my-offers.php">Mes offres</a></li>
+              <li><a class="nav-link text-white" href="my-offers.php">Mes offres</a></li>
               <?php
               break;
             
             case 'admin':
               ?>
-              <li><a class="nav-link" href="consultants.php">Gérer les consultants</a></li>
+              <li><a class="nav-link text-white" href="consultants.php">Gérer les consultants</a></li>
               <?php
               break;
             
             case 'consultant':
               require('actions/countUnnaprovedAction.php');
               ?>
-              <li><a class="nav-link" href="pending-offers.php">Annonces en attente</a><span class="badge text-bg-secondary"><?=$unnaprovedOffers->rowcount();?></span></li>
-              <li><a class="nav-link" href="pending-applies.php">Demandes en attente</a><span class="badge text-bg-secondary"><?=$unnaprovedApplies->rowcount();?></span></li>
-              <li><a class="nav-link" href="pending-accounts.php">Créations de compte en attente</a><span class="badge text-bg-secondary"><?=$unnaprovedAccounts;?></span></li>
+              <li><a class="nav-link text-white" href="pending-offers.php">Annonces en attente</a><span class="badge text-bg-secondary"><?=$unnaprovedOffers->rowcount();?></span></li>
+              <li><a class="nav-link text-white" href="pending-applies.php">Demandes en attente</a><span class="badge text-bg-secondary"><?=$unnaprovedApplies->rowcount();?></span></li>
+              <li><a class="nav-link text-white" href="pending-accounts.php">Créations de compte en attente</a><span class="badge text-bg-secondary"><?=$unnaprovedAccounts;?></span></li>
               <?php
               break;
 

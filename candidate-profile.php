@@ -24,7 +24,13 @@
                             <p>Prénom : <?= $userInfos['firstname']; ?><p>
                             <p>Nom : <?= $userInfos['lastname']; ?><p>
                             <p>Email : <?= $userInfos['email']; ?><p>
-                            <p>Son CV : </p><iframe src="./assets/files/candidatesCv/<?= $userInfos['cv']; ?>" height="450" width="350"></iframe>
+                            <p>Son CV : </p>
+                            <?php if(isset($userInfos['cv'])){
+                                echo "<iframe src='./assets/files/candidatesCv/".$userInfos['cv']."' height='450' width='350'></iframe>"; 
+                                } else {
+                                    echo "Aucun CV ajouté";
+                                }
+                            ?>
     
                         </div>
                     </div>

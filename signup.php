@@ -23,13 +23,18 @@
         </select>
         <br>
         <div class="mb-3">
-            <label for="userPassword" class="form-label">Mot de passe</label>
+            <label for="userPassword" class="form-label">Mot de passe (minimum 6 caractères, 1 Majuscule, 1 Chiffre, 1 Caractère spécial)</label>
             <input type="password" class="form-control" name="userPassword">
+        </div>
+        <div class="mb-3">
+            <label for="userPassword" class="form-label">Vérification du mot de passe</label>
+            <input type="password" class="form-control" name="userPassword2">
         </div>
         <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; } ?>
         <button type="submit" class="btn btn-primary" name="signup">S'inscrire</button>
-        <?php if(isset($successMsg)){ echo '<p>'.$successMsg.' <a href="login.php">Retour à la plage de connexion</a></p>'; } ?>
         <br><br>
+        <?php if(isset($successMsg)){ echo '<p>'.$successMsg.' <a href="login.php">Retour à la plage de connexion</a></p>'; } ?>
+        <br>
         <a href="login.php">J'ai déjà un compte, je me connecte</a>
     </form>
 

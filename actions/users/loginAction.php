@@ -13,7 +13,7 @@ if(isset($_POST['signup'])){
         $user_password = htmlspecialchars($_POST['userPassword']);
 
 
-        $checkIfUserExists = $bdd->prepare('SELECT * FROM recruiter WHERE login = ?');
+        $checkIfUserExists = $bdd->prepare('SELECT * FROM recruiter WHERE login = ? AND approved = 1');
         $checkIfUserExists->execute(array($user_pseudo));
 
         // Vérification si login user existe
@@ -39,7 +39,7 @@ if(isset($_POST['signup'])){
             }
 
         } else {
-            $checkIfUserExists = $bdd->prepare('SELECT * FROM candidate WHERE login = ?');
+            $checkIfUserExists = $bdd->prepare('SELECT * FROM candidate WHERE login = ? AND approved = 1');
             $checkIfUserExists->execute(array($user_pseudo));
 
             // Vérification si login user existe
@@ -110,7 +110,7 @@ if(isset($_POST['signup'])){
                             $errorMsg = "Le mot de passe saisit est incorrect";
                         }
                     } else {
-                        $errorMsg = "L'utilisateur n'existe pas'";
+                        $errorMsg = "Le compte n'existe pas ou n'a pas encore été approuvé";
                     }
                 }
             }

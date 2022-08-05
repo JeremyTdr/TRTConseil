@@ -33,7 +33,7 @@
                                     <p>Prénom : '.$user_firstname.'<p>
                                     <p>Nom : '.$user_lastname.'<p>
                                     <p>Email : '.$user_email.'<p>
-                                    <p>Mon CV : </p><iframe src="./assets/files/candidatesCv/'.$user_cv.'" height="450" width="350"></iframe>';
+                                    <p>Mon CV : </p> '.$user_cv.'';
                                     break;
                                 
                                 case 'recruiter':

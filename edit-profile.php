@@ -89,7 +89,10 @@
             } ?>
                       
                         
+                        <a href="profile.php?id=<?= $_SESSION['id']; ?>" class="btn btn-primary">Retour</a>  
                         <button type="submit" class="btn btn-primary" name="publish">Enregistrer</button>
+                        <br><br>
+                        <p>Merci de vous reconnecter après avoir enregistrer vos modifications.</p>
                         <br><br>
                         <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; } ?>
                     </form>
