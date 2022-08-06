@@ -13,7 +13,7 @@
     <div class="container">
 
         <?php 
-            if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; } 
+            if(isset($errorMsg)){ echo '<p class="text-danger">'.$errorMsg.'</p>'; } 
 
             if(isset($offer_description)){
                 ?>
@@ -27,6 +27,10 @@
                             <textarea type="text" class="form-control" name="descriptionOffer"><?=$offer_description;?></textarea>
                         </div>
                         <div class="mb-3">
+                            <label for="detailsOffer" class="form-label">Détails de l'offre</label>
+                            <textarea type="text" class="form-control" name="detailsOffer" rows="16"><?=$offer_details;?></textarea>
+                        </div>
+                        <div class="mb-3">
                             <label for="locOffer" class="form-label">Localisation du poste</label>
                             <input type="text" class="form-control" name="locOffer" value="<?=$offer_location;?>">
                         </div>
@@ -34,6 +38,7 @@
                             <label for="salaryOffer" class="form-label">Salaire proposé</label>
                             <input type="text" class="form-control" name="salaryOffer" value="<?=$offer_salary;?>">
                         </div>
+                        <a href="my-offers.php" class="btn btn-primary">Retour</a>
                         <button type="submit" class="btn btn-primary" name="publish">Modifier l'offre</button>
                     </form>
                 <?php

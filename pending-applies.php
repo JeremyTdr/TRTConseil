@@ -10,6 +10,8 @@
         <?php include 'includes/navbar.php'; ?>
 
         <div class="container">
+            <br>
+            <h2>Demandes en attente</h2>
             <br><br>
             <?php
         

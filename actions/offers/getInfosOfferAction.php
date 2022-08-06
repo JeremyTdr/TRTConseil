@@ -17,10 +17,12 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
             $offer_id = $offerInfos['id'];
             $offer_title = $offerInfos['title'];
             $offer_description = $offerInfos['description'];
+            $offer_details = $offerInfos['details'];
             $offer_location = $offerInfos['location'];
             $offer_salary = $offerInfos['salary'];
 
             $offer_description = str_replace('<br />', '', $offer_description);
+            $offer_details = str_replace('<br />', '', $offer_details);
 
         } else {
             $errorMsg = "Vous n'êtes pas l'auteur de cette offre";

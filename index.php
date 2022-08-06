@@ -13,7 +13,7 @@
         <form method="GET">
             <div class="form-group row">
                 <div class="col-8">
-                    <input type="search" name="search" class="form-control">
+                    <input type="search" name="search" class="form-control searchBar">
                 </div>
                 <div class="col-4">
                     <button class="btn btn-primary" type="submit">Rechercher une offre</button>

@@ -5,8 +5,9 @@
 <?php include 'includes/head.php'; ?>
 <body>
     <br><br>
-    <form class="container" method="POST">
-
+    <form class="container form-signup" method="POST">
+        <h1>TRT Conseil</h1>
+        <br><br>
         <div class="mb-3">
             <label for="userLogin" class="form-label">Nom d'utilisateur</label>
             <input type="text" class="form-control" name="userLogin">
@@ -30,10 +31,10 @@
             <label for="userPassword" class="form-label">Vérification du mot de passe</label>
             <input type="password" class="form-control" name="userPassword2">
         </div>
-        <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; } ?>
+        <?php if(isset($errorMsg)){ echo '<p class="text-danger">'.$errorMsg.'</p>'; } ?>
         <button type="submit" class="btn btn-primary" name="signup">S'inscrire</button>
         <br><br>
-        <?php if(isset($successMsg)){ echo '<p>'.$successMsg.' <a href="login.php">Retour à la plage de connexion</a></p>'; } ?>
+        <?php if(isset($successMsg)){ echo '<p class="text-success">'.$successMsg.' <a href="login.php">Retour à la plage de connexion</a></p>'; } ?>
         <br>
         <a href="login.php">J'ai déjà un compte, je me connecte</a>
     </form>

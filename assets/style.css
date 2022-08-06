@@ -21,3 +21,59 @@ li {
   margin: 0;
   padding: 0;
 }
+
+.nav-item {
+  margin: 0 20px;
+}
+
+.dropdown-menu.show {
+  padding: 5px 5px 10px 5px;
+  text-align: center;
+}
+
+input.form-control {
+  border-radius: 6px;
+}
+
+form.form-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  padding: 60px;
+  border: 1.5px solid #c1c1c1;
+  border-radius: 20px;
+}
+
+form.form-login h1,
+form.form-signup h1 {
+  text-align: center;
+}
+
+form.form-signup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  padding: 60px;
+  border: 1.5px solid #c1c1c1;
+  border-radius: 20px;
+}
+
+.card-footer a {
+  margin: 0 15px 0 0;
+}
+
+@media screen and (max-width: 840px) {
+  form.form-login,
+  form.form-signup {
+    width: 85%;
+    padding: 20px;
+  }
+
+  .card-footer a {
+    margin: 0 10px 12px 0;
+  }
+}

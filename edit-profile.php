@@ -31,6 +31,14 @@
                             <input type="text" class="form-control" name="userLastname" value="<?=$user_lastname;?>">
                         </div>
                         <div class="mb-3">
+                            <label for="userPassword" class="form-label">Mot de passe (minimum 6 caractères, 1 Majuscule, 1 Chiffre, 1 Caractère spécial)</label>
+                            <input type="password" class="form-control" name="userPassword" placeholder="******">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userPassword" class="form-label">Vérification du mot de passe</label>
+                            <input type="password" class="form-control" name="userPassword2" placeholder="******">
+                        </div>
+                        <div class="mb-3">
                             <label for="userEmail" class="form-label">Email</label>
                             <input type="text" class="form-control" name="userEmail" value="<?=$user_email;?>">
                         </div>
@@ -40,7 +48,7 @@
                                 <input type="file" class="form-control" name="userCv" value="<?=$user_cv;?>">
                                 <button class="btn btn-outline-secondary" type="submit" name="upload">Ajouter</button>  
                             </div>
-                            <?php if(isset($successMsg)){ echo '<p>'.$successMsg.'</p>'; } ?>
+                            <?php if(isset($successMsg)){ echo '<p class="text-success">'.$successMsg.'</p>'; } ?>
                         </div>
 
                     <?php break;
@@ -63,6 +71,14 @@
                                 <div class="mb-3">
                                     <label for="userEmail" class="form-label">Email</label>
                                     <input type="text" class="form-control" name="userEmail" value="<?=$user_email;?>">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userPassword" class="form-label">Mot de passe (minimum 6 caractères, 1 Majuscule, 1 Chiffre, 1 Caractère spécial)</label>
+                                    <input type="password" class="form-control" name="userPassword" placeholder="******">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="userPassword" class="form-label">Vérification du mot de passe</label>
+                                    <input type="password" class="form-control" name="userPassword2" placeholder="******">
                                 </div>
         
                             <?php break;
@@ -94,7 +110,7 @@
                         <br><br>
                         <p>Merci de vous reconnecter après avoir enregistrer vos modifications.</p>
                         <br><br>
-                        <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; } ?>
+                        <?php if(isset($errorMsg)){ echo '<p class="text-danger">'.$errorMsg.'</p>'; } ?>
                     </form>
                 <?php
         

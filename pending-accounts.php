@@ -10,6 +10,8 @@
         <?php include 'includes/navbar.php'; ?>
 
         <div class="container">
+            <br>
+            <h2>Créations de comptes en attente</h2>
             <br><br>
 
             <h2 data-bs-toggle="collapse" href="#candidatesCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">Candidats <span class="badge text-bg-secondary"><?=$unnaprovedCandidates->rowcount();?></span> <i class="fa-solid fa-angle-down"></i></h2>

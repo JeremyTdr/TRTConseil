@@ -15,6 +15,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
         
         $offer_title = $offerInfos['title'];
         $offer_description = $offerInfos['description'];
+        $offer_details = $offerInfos['details'];
         $offer_location = $offerInfos['location'];
         $offer_salary = $offerInfos['salary'];
 

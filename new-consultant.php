@@ -22,10 +22,10 @@
                 <label for="userPassword" class="form-label">Mot de passe</label>
                 <input type="password" class="form-control" name="userPassword">
             </div>
-            <?php if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; } ?>
+            <?php if(isset($errorMsg)){ echo '<p class="text-danger">'.$errorMsg.'</p>'; } ?>
             <button type="submit" class="btn btn-primary" name="create">Créer</button>
             <br><br>
-            <?php if(isset($successMsg)){ echo '<p>'.$successMsg.' <a href="consultants.php">Retour à la liste des consultants</a></p>'; } ?>
+            <?php if(isset($successMsg)){ echo '<p class="text-success">'.$successMsg.' <a href="consultants.php">Retour à la liste des consultants</a></p>'; } ?>
             <a href=""></a>
         </form>
         <br><br>

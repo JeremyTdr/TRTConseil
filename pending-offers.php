@@ -9,9 +9,11 @@
         <?php include 'includes/navbar.php'; ?>
 
         <div class="container">
+            <br>
+            <h2>Annonces en attente</h2>
             <br><br>
             <?php
-            if(isset($errorMsg)){ echo '<p>'.$errorMsg.'</p>'; }
+            if(isset($errorMsg)){ echo '<p class="text-danger">'.$errorMsg.'</p>'; }
         
             while($offer = $getAllOffers->fetch()){
                 if($offer['approved'] == 0){

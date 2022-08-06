@@ -16,13 +16,17 @@
 
                     if(isset($offer_description)){
                         ?>
-                            <h2><?= $offer_title ?></h2>
+                            <h2><?= $offer_title; ?></h2>
                             <hr>
-                            <p><?= $offer_description ?></p>
+                            <h4>Description & détails</h4>
+                            <p><?= $offer_description; ?></p>
+                            <br>
+                            <p><?= $offer_details; ?></p>
                             <hr>
-                            <p><?= $offer_location ?></p>
+                            <h4>Localisation</h4><p><?= $offer_location; ?></p>
                             <hr>
-                            <p><?= $offer_salary ?></p>
+                            <h4>Salaire proposé</h4>
+                            <p><?= $offer_salary; ?></p>
                         <?php
                         if($offerInfos['approved'] == 0 AND $_SESSION['type'] == 'consultant'){
                             ?>
@@ -32,7 +36,7 @@
                         if($_SESSION['type'] == 'candidate'){
                             ?>
                             <form method="POST">
-                                <button type="submit" class="btn btn-primary" name="apply">Postuler</button>
+                                <button type="submit" class="btn btn-success" name="apply">Postuler</button>
                                 <?php
                                 if(!isset($errorApplyMessage)){
                                     if(isset($successApplyMsg)){
@@ -54,7 +58,7 @@
                 }
                 if(isset($errorMsg)){echo $errorMsg;}
             ?> 
-            <br>
+            <br><br>
             <a href="index.php" class="btn btn-primary">Retour à l'accueil</a>   
         </div>
         

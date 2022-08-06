@@ -8,8 +8,16 @@
 <body>
     <?php include 'includes/navbar.php'; ?>
     <div class="container">
-        <h2>Publier une offre</h2>
         <br>
+        <h2>Publier une nouvelle offre</h2>
+        <br>
+        <?php 
+                if(isset($errorMsg)){
+                 echo '<p class="text-danger">'.$errorMsg.'</p>'; 
+                } elseif(isset($successMsg)) {
+                    echo '<p class="text-success">'.$successMsg.'</p>'; 
+                }
+        ?>
         <form method="POST">
 
             <div class="mb-3">
@@ -21,6 +29,10 @@
                 <textarea type="text" class="form-control" name="descriptionOffer"></textarea>
             </div>
             <div class="mb-3">
+                <label for="detailsOffer" class="form-label">Détails de l'offre</label>
+                <textarea type="text" class="form-control" name="detailsOffer" rows="16"><?=$offer_details;?></textarea>
+            </div>
+            <div class="mb-3">
                 <label for="locOffer" class="form-label">Localisation du poste</label>
                 <input type="text" class="form-control" name="locOffer">
             </div>
@@ -28,13 +40,7 @@
                 <label for="salaryOffer" class="form-label">Salaire proposé</label>
                 <input type="text" class="form-control" name="salaryOffer">
             </div>
-            <?php 
-                if(isset($errorMsg)){
-                 echo '<p>'.$errorMsg.'</p>'; 
-                } elseif(isset($successMsg)) {
-                    echo '<p>'.$successMsg.'</p>'; 
-                }
-            ?>
+            
             <button type="submit" class="btn btn-primary" name="publish">Créer l'offre</button>
         </form>
         

@@ -9,8 +9,10 @@
         <?php include 'includes/navbar.php'; ?>
 
         <div class="container">
-            <br><br>
-            <a href="new-consultant.php" class="btn btn-primary">Nouveau consultant</a>
+            <br>
+            <h2>Gestion des consultants</h2>
+            <br>
+            <a href="new-consultant.php" class="btn btn-primary">Créer un nouveau consultant</a>
             <br><br>
             <?php
             while($consultant = $getAllConsultants->fetch()){

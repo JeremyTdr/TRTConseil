@@ -23,6 +23,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                     $user_lastname = $userInfos['lastname'];
                     $user_email = $userInfos['email'];
                     $user_cv = $userInfos['cv'];
+                    $user_password = $userInfos['password'];
 
                     if(isset($userInfos['cv'])){
                         $user_cv = "<iframe src='./assets/files/candidatesCv/".$userInfos['cv']."' height='450' width='350'></iframe>"; 
@@ -51,6 +52,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                     $user_society = $userInfos['society'];
                     $user_address = $userInfos['address'];
                     $user_email = $userInfos['email'];
+                    $user_password = $userInfos['password'];
 
                     $user_address = str_replace('<br />', '', $user_address);
                 }
@@ -71,6 +73,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                 if($userInfos['id'] == $_SESSION['id']){
 
                     $user_login = $userInfos['login'];
+                    $user_password = $userInfos['password'];
                 }
 
             } else {
@@ -89,6 +92,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                 if($userInfos['id'] == $_SESSION['id']){
 
                     $user_login = $userInfos['login'];
+                    $user_password = $userInfos['password'];
                 }
 
             } else {
