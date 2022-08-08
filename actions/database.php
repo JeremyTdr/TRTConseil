@@ -19,6 +19,8 @@ if (getenv('JAWSDB_URL') !== false) {
 
 try {
     $bdd = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
 } catch(Exception $e) {
     die('Une erreur a été trouvée : ' . $e->getMessage());
