@@ -11,7 +11,7 @@ if (getenv('JAWSDB_URL') !== false) {
 
 } else {
     // LOCAL
-    $hostname = 'localhost';
+    $hostname = '127.0.0.1';
     $username = 'root';
     $password = 'root';
     $database = 'TRT Conseil';
