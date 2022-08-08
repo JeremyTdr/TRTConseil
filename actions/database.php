@@ -18,7 +18,7 @@ if (getenv('JAWSDB_URL') !== false) {
 }
 
 try {
-    $bdd = new PDO("mysql:host='$hostname';dbname='$database';charset=utf8;", $username, $password);
+    $bdd = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
     
 } catch(Exception $e) {
     die('Une erreur a été trouvée : ' . $e->getMessage());
