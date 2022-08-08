@@ -1,5 +1,5 @@
 <?php 
-    require('actions/securityAction.php');
+
     require('actions/offers/showOffersAction.php');
 ?>
 <!DOCTYPE html>
