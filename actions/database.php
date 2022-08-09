@@ -7,11 +7,11 @@ if (getenv('JAWSDB_URL') !== false) {
     $hostname = $dbparts['host'];
     $username = $dbparts['user'];
     $password = $dbparts['pass'];
-    $database = ltrim($dbparts['path'],'/');
+    $database = ltrim($dbparts['path'],'/TRT_Conseil/');
 
 } else {
     // LOCAL
-    $hostname = '127.0.0.1';
+    $hostname = 'localhost';
     $username = 'root';
     $password = 'root';
     $database = 'TRT Conseil';
