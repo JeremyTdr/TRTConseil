@@ -4,10 +4,10 @@
 if (getenv('JAWSDB_URL') !== false) {
     $dbparts = parse_url($url);
 
-    $hostname = $dbparts['host'];
-    $username = $dbparts['user'];
-    $password = $dbparts['pass'];
-    $database = ltrim($dbparts['path'],'/');
+    $hostname = 'y6aj3qju8efqj0w1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
+    $username = 'hos5wgw0c8fcqo73';
+    $password = 'o5vevlu8raz6scmy';
+    $database = ltrim('omu8lrvn0pozj1nk/');
 
 } else {
     // LOCAL
