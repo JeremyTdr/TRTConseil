@@ -8,7 +8,7 @@ if (getenv('JAWSDB_URL') !== false) {
     $hostname = $dbparts['host'];
     $username = $dbparts['user'];
     $password = $dbparts['pass'];
-    $database = $dbparts['path'];
+    $database = ltrim($dbparts['path'], './');
 
 } else {
     // LOCAL
