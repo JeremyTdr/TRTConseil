@@ -28,7 +28,8 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
 
 
 
-            //Envoi du mail au recruteur
+            /*
+            Envoi du mail au recruteur (AUCUNE SOLUTION TROUVEE VIA HEROKU)
 
             $applyCandidateId = $offerInfos['id_candidate'];
 
@@ -66,6 +67,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
             </html>';
 
             mail($mailTo, 'Nouveau candidat', $email_body, $headers);
+            */
 
 
             header('Location: ../../pending-applies.php');
