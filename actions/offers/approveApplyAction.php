@@ -26,8 +26,6 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
             $approveThisOffer = $bdd->prepare('UPDATE apply_offers SET approved = ? WHERE id = ?');
             $approveThisOffer->execute(array($new_offer_status, $offerId));
 
-
-
             /*
             Envoi du mail au recruteur (AUCUNE SOLUTION TROUVEE VIA HEROKU)
 
@@ -45,7 +43,7 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
 
 
             $mailFrom = 'contact@trtconseil.fr';
-            $mailTo = 'jeremy.tdr@gmail.com';
+            $mailTo = '';
 
             $headers = "From: $mailFrom \r\n";
             $headers .= "Reply-to: $mail \r\n";
@@ -68,7 +66,6 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
 
             mail($mailTo, 'Nouveau candidat', $email_body, $headers);
             */
-
 
             header('Location: ../../pending-applies.php');
 

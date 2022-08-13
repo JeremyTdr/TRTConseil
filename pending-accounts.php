@@ -14,7 +14,7 @@
             <h2>Créations de comptes en attente</h2>
             <br><br>
 
-            <h2 data-bs-toggle="collapse" href="#candidatesCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">Candidats <span class="badge text-bg-secondary"><?=$unnaprovedCandidates->rowcount();?></span> <i class="fa-solid fa-angle-down"></i></h2>
+            <h3 data-bs-toggle="collapse" href="#candidatesCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">Candidats <span class="badge text-bg-secondary"><?=$unnaprovedCandidates->rowcount();?></span> <i class="fa-solid fa-angle-down"></i></h3>
             <div class="collapse multi-collapse" id="candidatesCollapse">
                 <?php
                 while($candidates = $candidatesPending->fetch()){
@@ -39,7 +39,7 @@
 
             <hr>
             <br>
-            <h2 data-bs-toggle="collapse" href="#recruitersCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">Recruteurs <span class="badge text-bg-secondary"><?=$unnaprovedRecruiters->rowcount();?></span> <i class="fa-solid fa-angle-down"></i></h2>
+            <h3 data-bs-toggle="collapse" href="#recruitersCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">Recruteurs <span class="badge text-bg-secondary"><?=$unnaprovedRecruiters->rowcount();?></span> <i class="fa-solid fa-angle-down"></i></h3>
             <div class="collapse multi-collapse" id="recruitersCollapse">
                 <?php
                 while($recruiters = $recruitersPending->fetch()){

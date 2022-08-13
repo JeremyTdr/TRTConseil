@@ -23,6 +23,7 @@
               ?>
               <li><a class="nav-link text-dark" href="publish-offer.php">Publier une offre</a></li>
               <li><a class="nav-link text-dark" href="my-offers.php">Mes offres</a></li>
+              <li><a class="nav-link text-dark" href="my-candidates.php">Mes candidats</a></li>
               <?php
               break;
 
