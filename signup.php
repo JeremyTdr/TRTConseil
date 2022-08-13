@@ -34,7 +34,7 @@
         <?php if(isset($errorMsg)){ echo '<p class="text-danger">'.$errorMsg.'</p>'; } ?>
         <button type="submit" class="btn btn-primary" name="signup">S'inscrire</button>
         <br><br>
-        <?php if(isset($successMsg)){ echo '<p class="text-success">'.$successMsg.' <a href="login.php">Retour à la plage de connexion</a></p>'; } ?>
+        <?php if(isset($successMsg)){ echo '<p class="text-success">'.$successMsg.'</p><p>Pensez à compléter votre profil lors de la première connexion. <a href="login.php">Retour à la plage de connexion</a></p>'; } ?>
         <br>
         <a href="login.php">J'ai déjà un compte, je me connecte</a>
     </form>

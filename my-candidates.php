@@ -11,16 +11,17 @@
         <div class="container">
             <br>
             <h2>Candidats pour vos offres</h2>
-            <br><br>
+            <br>
             <?php
                 while($candidates = $getAllApprovedApplies->fetch()){
                     ?>
                         <div class="card">
                             <div class="card-body">
+                                <h4>Poste : <?= $candidates['title']; ?></h4>
                                 <p>Prénom : <?= $candidates['firstname']; ?><p>
                                 <p>Nom : <?= $candidates['lastname']; ?><p>
                                 <p>Email : <?= $candidates['email']; ?><p>
-                                <p data-bs-toggle="collapse" href="#candidatesCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">CV <i class="fa-solid fa-angle-down"></i></p>
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#candidatesCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">Voir le CV <i class="fa-solid fa-angle-down"></i></a>
                                 <div class="collapse multi-collapse" id="candidatesCollapse">
                                 <?php if(isset($candidates['cv'])){
                                     echo "<iframe src='./assets/files/candidatesCv/".$candidates['cv']."' height='450' width='350'></iframe>"; 
